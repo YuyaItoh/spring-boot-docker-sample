@@ -1,6 +1,7 @@
 pipeline {
     agent any
     environment {
+        // JenkinsのGUIから設定。credentialsの引数が間違っている（= Jenkinsに存在しない）場合はエラーになる
         AWS_API_TOKEN = credentials('aws_api_token')
     }
     stages {
@@ -21,9 +22,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo deploying'
-                sh "echo using api_token = $AWS_API_TOKEN > hoge.txt"
-                sh 'echo deploy completed!'
+                echo "deploying using api-token $AWS_API_TOKEN ..."
+                echo 'echo deploy completed!'
             }
         }
     }
