@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        AWS_API_TOKEN = credentials('aws_ap_token')
+        AWS_API_TOKEN = credentials('aws_api_token')
     }
     stages {
         stage('Initialize') {
@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'echo deploying'
-                sh "echo using api_token = $AWS_API_TOKEN"
+                sh "echo using api_token = $AWS_API_TOKEN > hoge.txt"
                 sh 'echo deploy completed!'
             }
         }
