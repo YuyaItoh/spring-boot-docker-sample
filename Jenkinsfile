@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        AWS_API_TOKEN = credentials('aws_api_token')
+        AWS_API_TOKEN = credentials('aws_ap_token')
     }
     stages {
         stage('Initialize') {
