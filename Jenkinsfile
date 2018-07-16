@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Initialize') {
             steps {
-                gradlew 'clean'
+                sh './gradlew clean'
             }
         }
         stage('Build') {
             steps {
-                gradlew 'build'
+                sh './gradlew build'
                 junit 'build/test-results/**/*.xml'
             }
         }
