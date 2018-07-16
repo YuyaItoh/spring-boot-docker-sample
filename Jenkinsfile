@@ -7,6 +7,7 @@ pipeline {
     parameters {
         // ジョブ実行画面から入力されたパラメータ
         string(name: 'version', defaultValue: '', description: 'デプロイ対象のバージョン')
+        string(name: 'branch', defaultValue: '**', description: 'ビルド対象のブランチ')
     }
     stages {
         stage('Initialize') {
