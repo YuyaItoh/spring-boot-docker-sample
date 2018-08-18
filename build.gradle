@@ -25,7 +25,7 @@ repositories {
 
 bootJar {
     launchScript()
-    archiveName = "${project.name}.jar"
+    archiveName = "app.jar"
 }
 
 dependencies {
