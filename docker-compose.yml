@@ -4,15 +4,13 @@ services:
     build: .
     depends_on:
       - db
-    container_name: spring-sample
     restart: always
     ports:
       - 8080:8080
     volumes:
-      - ./log:/var/spring-sample/log
+      - ./log:/var/sample/log
   db:
     image: mysql:5.7
-    container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: sample
